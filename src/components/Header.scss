@@ -1,0 +1,58 @@
+/** @format */
+@import 'variables.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-blue-dark;
+  color: $color-white;
+  padding: 1rem;
+
+  &__left {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+
+    > .MuiSvgIcon-root {
+      // margin-left: auto;
+      // margin-right: 3rem;
+    }
+  }
+
+  &__search {
+    background-color: $color-blue-medium;
+    text-align: center;
+    color: $color-white;
+    border: 1px $color-grey-medium solid;
+    border-radius: 6px;
+
+    flex: 0.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > input {
+      background-color: transparent;
+      border: none;
+      height: 3rem;
+      // min-width: 35vw;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__right {
+    flex: 0.3;
+    display: flex;
+    align-items: flex-end;
+
+    > .MuiSvgIcon-root {
+      margin-left: auto;
+      margin-right: 2rem;
+    }
+  }
+}

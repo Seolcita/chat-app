@@ -1,0 +1,30 @@
+/** @format */
+
+@import 'variables.scss';
+
+.sidebarOption {
+  padding-left: 2px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: $color-grey-medium;
+    opacity: 0.9;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__icon {
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+
+  &__channel {
+    margin: 1rem;
+  }
+}
