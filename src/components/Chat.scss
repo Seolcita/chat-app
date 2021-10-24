@@ -1,0 +1,44 @@
+/** @format */
+
+@import 'variables.scss';
+
+.chat {
+  flex: 0.7;
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding-bottom: 15rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+
+    &--right > p {
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+
+      > .MuiSvgIcon-root {
+        margin-right: 5px !important;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__channelName {
+    text-transform: lowercase;
+    font-size: 2rem;
+    font-weight: 500;
+    color: $color-white;
+
+    display: flex;
+    align-items: center;
+
+    > .MuiSvgIcon-root {
+      margin-left: 1rem !important;
+      font-size: 1.8rem;
+    }
+  }
+}

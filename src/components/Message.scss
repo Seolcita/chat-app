@@ -1,0 +1,29 @@
+/** @format */
+
+@import 'variables.scss';
+
+.message {
+  display: flex;
+  align-items: center;
+  color: $color-white;
+  font-size: 1.5rem;
+  padding: 2rem;
+
+  img {
+    height: 5rem;
+    width: 5rem;
+    // object-fit: contain;
+    border-radius: 50%;
+  }
+
+  &__info {
+    padding-left: 2rem;
+  }
+
+  &__timestamp {
+    color: $color-grey-light;
+    font-weight: 300;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+  }
+}

@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SidebarOption from './SidebarOption';
 
 // CSS & MUI Icons & Components
@@ -19,8 +19,22 @@ import {
   Add,
 } from '@mui/icons-material';
 import './Sidebar.scss';
+import db from '../firebase';
 
 function Sidebar() {
+  const [channels, setChannels] = useState([]);
+
+  useEffect(() => {
+    db.collection('rooms').onSnapshot((snapshot) =>
+      setChannels(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          name: doc.data().name,
+        }))
+      )
+    );
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -44,9 +58,12 @@ function Sidebar() {
       <hr />
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
-      <SidebarOption Icon={Add} title="Add Channels" />
+      <SidebarOption Icon={Add} title="Add Channels" addChannelOption />
       {/* Connect DB */}
       {/* Sidebar Option */}
+      {channels.map((channel) => (
+        <SidebarOption title={channel.name} id={channel.id} />
+      ))}
     </div>
   );
 }
