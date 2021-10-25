@@ -22,7 +22,8 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
   const selectChannel = () => {
     if (id) {
       // history.push(`/room/${title}`);
-      history.push(`/room/${id}`);
+      // history.push(`/room/${id}`);
+      window.location.href = `/room/${id}`;
     } else {
       history.push(title);
     }

@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Message from './Message';
 
 // CSS & MUI icons
@@ -29,9 +29,11 @@ function Chat() {
       .onSnapshot((snapshot) =>
         setRoomMessages(snapshot.docs.map((doc) => doc.data()))
       );
-  }, [roomId]);
-  console.log('Room Name :', roomDetails);
-  console.log('Message :', roomMessages);
+    // console.log('Room Name00 :', roomDetails);
+    // console.log('Message00 :', roomMessages);
+  }, []);
+  // console.log('Room Name :', roomDetails);
+  // console.log('Message :', roomMessages);
 
   return (
     <div className="chat">
