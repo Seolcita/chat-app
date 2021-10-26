@@ -20,30 +20,19 @@ const App = () => {
 
   return (
     <div className="app">
-      <BrowserRouter>
-        {!user ? (
-          // <Route exact path="/login" component={Login} />
-          <Route path="/">
-            <Login />
-          </Route>
-        ) : (
-          <>
-            <Header />
-            <div className="app__body">
-              <Sidebar />
-              <Switch>
-                {/* <Route exact path="/room/:roomId" component={Chat}></Route> */}
-                <Route path="/room/:roomId">
-                  <Chat />
-                </Route>
-                {/* <Route exact path="/">
-                  <h1> Bunny</h1>
-                </Route> */}
-              </Switch>
-            </div>
-          </>
-        )}
-      </BrowserRouter>
+      {!user ? (
+        <Route path="/" component={Login} />
+      ) : (
+        <>
+          <Header />
+          <div className="app__body">
+            <Sidebar />
+            {/* <Switch> */}
+            <Route path="/room/:roomId" component={Chat} />
+            {/* </Switch> */}
+          </div>
+        </>
+      )}
     </div>
   );
 };

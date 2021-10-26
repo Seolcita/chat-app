@@ -32,7 +32,7 @@ function Chat() {
       );
     // console.log('Room Name00 :', roomDetails);
     // console.log('Message00 :', roomMessages);
-  }, []);
+  }, [roomId]);
   // console.log('Room Name :', roomDetails);
   // console.log('Message :', roomMessages);
 
