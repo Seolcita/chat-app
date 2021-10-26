@@ -1,0 +1,33 @@
+/** @format */
+
+@import 'variables.scss';
+
+.chatInput {
+  width: 100vw;
+  position: relative;
+
+  &__container {
+    width: 100%;
+    position: fixed;
+    bottom: 3rem;
+  }
+
+  form {
+    input {
+      width: 60%;
+      border: 1px solid $color-grey-medium;
+      border-radius: 3px;
+      padding: 1.5rem;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      width: 5%;
+      padding: 1.4rem;
+      margin-left: 0.5rem;
+    }
+  }
+}

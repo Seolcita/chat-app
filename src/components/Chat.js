@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import Message from './Message';
+import ChatInput from './ChatInput';
 
 // CSS & MUI icons
 import './Chat.scss';
@@ -64,6 +65,7 @@ function Chat() {
           />
         ))}
       </div>
+      <ChatInput channelName={roomDetails?.name} channelId={roomId} />
     </div>
   );
 }

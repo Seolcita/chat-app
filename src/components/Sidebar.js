@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import SidebarOption from './SidebarOption';
+import { useStateValue } from '../StateProvider';
 
 // CSS & MUI Icons & Components
 import {
@@ -23,6 +24,7 @@ import db from '../firebase';
 
 function Sidebar() {
   const [channels, setChannels] = useState([]);
+  const [{ user }] = useStateValue();
 
   useEffect(() => {
     db.collection('rooms').onSnapshot((snapshot) =>
@@ -42,7 +44,7 @@ function Sidebar() {
           <h2>Seol's Slack</h2>
           <h3>
             <FiberManualRecord />
-            Seol Hi Kim
+            {user?.displayName}
           </h3>
         </div>
         <Create />
