@@ -6,8 +6,7 @@ import { actionTypes } from '../reducer';
 import { auth, provider } from '../firebase';
 
 //CSS
-import { Button } from '@mui/material';
-import { FiberManualRecord } from '@mui/icons-material';
+import { BubbleChart } from '@mui/icons-material';
 import './Login.scss';
 
 function Login() {
@@ -32,14 +31,13 @@ function Login() {
   return (
     <div className="login">
       <div className="login__container">
-        <img
-          src="https://toppng.com/uploads/preview/slack-new-logo-icon-11609376883z32jbkf8kg.png"
-          alt="slack logo"
-        />
-        <h1>Sign in to Slack</h1>
-        <Button className="login__btn" onClick={signIn}>
+        <div className="login__logo">
+          <BubbleChart className="login__logo--icon" />
+          <span className="login__logo--title">Babble Babble</span>
+        </div>
+        <button className="login__btn" onClick={signIn}>
           Sign In with Google
-        </Button>
+        </button>
       </div>
     </div>
   );

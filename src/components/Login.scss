@@ -1,6 +1,8 @@
 /** @format */
 
 @import 'variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
 body {
   background-color: $color-blue-dark;
@@ -16,7 +18,7 @@ body {
   align-items: center;
 
   &__container {
-    width: 50vw;
+    width: 40vw;
     padding: 10rem;
     text-align: center;
     background-color: $color-white;
@@ -25,19 +27,50 @@ body {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.75),
       0 0 3px rgba(255, 255, 255, 0.85);
 
-    img {
-      object-fit: contain;
-      height: 100px;
-      margin-bottom: 4rem;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   // Material UI Button
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+
+    &--icon {
+      object-fit: contain;
+      height: 8rem;
+      width: 8rem;
+    }
+
+    &--title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 3rem;
+      margin-left: 1rem;
+    }
+  }
+
   &__btn {
-    margin-top: 5rem !important;
-    text-transform: inherit !important;
-    background-color: $color-green !important;
-    color: $color-white !important;
-    font-size: 1.2rem !important;
+    margin-top: 2rem;
+    font-family: 'Dongle', sans-serif;
+    background-color: $color-blue-dark;
+    color: $color-white;
+    font-size: 2.2rem;
+    padding: 0.3rem 3rem;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }
