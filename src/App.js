@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
 import Header from './components/Header';

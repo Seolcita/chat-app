@@ -12,6 +12,7 @@ import './Login.scss';
 
 function Login() {
   const [state, dispatch] = useStateValue();
+
   const signIn = () => {
     auth
       .signInWithPopup(provider)
@@ -24,6 +25,7 @@ function Login() {
       })
       .catch((error) => {
         alert(error.message);
+        console.log(error.message);
       });
   };
 

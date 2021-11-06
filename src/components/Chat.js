@@ -23,18 +23,41 @@ function Chat() {
         .onSnapshot((snapshot) => setRoomDetails(snapshot.data()));
     }
 
+    // db.collection('rooms')
+    //   .doc(roomId)
+    //   .collection('messages')
+    //   .orderBy('timestamp', 'asc')
+    //   .onSnapshot((snapshot) =>
+    //     setRoomMessages(snapshot.docs.map((doc) => doc.data()))
+    //   );
+
     db.collection('rooms')
       .doc(roomId)
       .collection('messages')
       .orderBy('timestamp', 'asc')
-      .onSnapshot((snapshot) =>
-        setRoomMessages(snapshot.docs.map((doc) => doc.data()))
-      );
-    // console.log('Room Name00 :', roomDetails);
-    // console.log('Message00 :', roomMessages);
+      .onSnapshot((snapshot) => {
+        // const messageInfo = snapshot.docs.map((doc) => ({
+        //   id: doc.id,
+        //   message: doc.data(),
+        // }));
+        // setRoomMessages(messageInfo);
+
+        setRoomMessages(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            message: doc.data().message,
+            timestamp: doc.data().timestamp,
+            user: doc.data().user,
+            userImage: doc.data().userImage,
+          }))
+          // snapshot.docs.map((doc) =>
+          //   console.log('DATA****** ', doc.id, doc.data())
+          // );
+        );
+      });
   }, [roomId]);
   // console.log('Room Name :', roomDetails);
-  // console.log('Message :', roomMessages);
+  console.log('Message :', roomMessages);
 
   return (
     <div className="chat">
@@ -54,14 +77,15 @@ function Chat() {
       </div>
       <div className="chat__messages">
         {console.log('Message2 :', roomMessages)}
-        {roomMessages.map(({ message, timestamp, user, userImage }) => (
-          //console.log('CHECK >>>>>>>>', message, timestamp, user, userImage);
-
+        {console.log('ROOM ID :', roomId)}
+        {roomMessages.map(({ message, timestamp, user, userImage, id }) => (
           <Message
             message={message}
             timestamp={timestamp}
-            user={user}
+            userName={user}
             userImage={userImage}
+            messageId={id}
+            roomId={roomId}
           />
         ))}
       </div>

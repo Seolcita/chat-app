@@ -6,7 +6,6 @@ import { useStateValue } from '../StateProvider';
 
 // CSS & Material UI - Icons/Components
 import './ChatInput.scss';
-import { Button } from '@mui/material';
 import firebase from 'firebase';
 
 function ChatInput({ channelName, channelId }) {
