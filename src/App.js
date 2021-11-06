@@ -4,11 +4,12 @@ import React, { useState } from 'react';
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
-import Header from './components/Header';
+// Components
 import Sidebar from './components/Sidebar';
 import Chat from './components/Chat';
 import Login from './components/Login';
 
+// CSS
 import './scss/base.scss';
 import './App.scss';
 
@@ -23,12 +24,9 @@ const App = () => {
         <Route path="/" component={Login} />
       ) : (
         <>
-          <Header />
           <div className="app__body">
             <Sidebar />
-            {/* <Switch> */}
             <Route path="/room/:roomId" component={Chat} />
-            {/* </Switch> */}
           </div>
         </>
       )}

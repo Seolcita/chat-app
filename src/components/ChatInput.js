@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import db from '../firebase';
 import { useStateValue } from '../StateProvider';
+import firebase from 'firebase';
 
 // CSS & Material UI - Icons/Components
+import { Send } from '@mui/icons-material';
 import './ChatInput.scss';
-import firebase from 'firebase';
 
 function ChatInput({ channelName, channelId }) {
   const [input, setInput] = useState('');
@@ -35,7 +36,7 @@ function ChatInput({ channelName, channelId }) {
             placeholder={`Message#${channelName?.toLowerCase()}`}
           />
           <button type="submit" onClick={sendMessage}>
-            SEND
+            <Send className="sendBtn" />
           </button>
         </form>
       </div>

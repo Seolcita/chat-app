@@ -8,7 +8,7 @@ import ChatInput from './ChatInput';
 // CSS & MUI icons
 import './Chat.scss';
 import './Message.scss';
-import { StarBorder, InfoOutlined } from '@mui/icons-material';
+import { BubbleChart } from '@mui/icons-material';
 import db from '../firebase';
 
 function Chat() {
@@ -64,20 +64,20 @@ function Chat() {
       <div className="chat__header">
         <div className="chat__header--left">
           <h4 className="chat__channelName">
-            <span>#{roomDetails?.name}</span>
+            <BubbleChart className="bubbleIcon" />{' '}
+            <span>{roomDetails?.name}</span>
             {/* {console.log('name:', roomDetails.name)} */}
-            <StarBorder />
           </h4>
         </div>
         <div className="chat__header--right">
-          <p>
+          {/* <p>
             <InfoOutlined /> Details
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="chat__messages">
-        {console.log('Message2 :', roomMessages)}
-        {console.log('ROOM ID :', roomId)}
+        {/* {console.log('Message2 :', roomMessages)}
+        {console.log('ROOM ID :', roomId)} */}
         {roomMessages.map(({ message, timestamp, user, userImage, id }) => (
           <Message
             message={message}

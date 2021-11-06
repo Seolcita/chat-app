@@ -5,20 +5,8 @@ import SidebarOption from './SidebarOption';
 import { useStateValue } from '../StateProvider';
 
 // CSS & MUI Icons & Components
-import {
-  FiberManualRecord,
-  Create,
-  InsertComment,
-  Inbox,
-  Drafts,
-  BookmarkBorder,
-  PeopleAlt,
-  Apps,
-  FileCopy,
-  ExpandLess,
-  ExpandMore,
-  Add,
-} from '@mui/icons-material';
+import { Avatar } from '@mui/material';
+import { FiberManualRecord } from '@mui/icons-material';
 import './Sidebar.scss';
 import db from '../firebase';
 
@@ -40,32 +28,30 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
+        <Avatar
+          className="sidebar__avatar"
+          alt={user?.displayName}
+          src={user?.photoURL}
+        />
         <div className="sidebar__info">
-          <h2>Seol's Slack</h2>
+          <h2>Babble Babble</h2>
           <h3>
             <FiberManualRecord />
             {user?.displayName}
           </h3>
         </div>
-        <Create />
       </div>
-      <SidebarOption Icon={InsertComment} title="Threads" />
-      <SidebarOption Icon={Inbox} title="Mentions & Reactions" />
-      <SidebarOption Icon={Drafts} title="Saved Item" />
-      <SidebarOption Icon={BookmarkBorder} title="Channel Browser" />
-      <SidebarOption Icon={PeopleAlt} title="People & User Groups" />
-      <SidebarOption Icon={Apps} title="Apps" />
-      <SidebarOption Icon={FileCopy} title="File Browser" />
-      <SidebarOption Icon={ExpandLess} title="Show Less" />
-      <hr />
-      <SidebarOption Icon={ExpandMore} title="Channels" />
-      <hr />
-      <SidebarOption Icon={Add} title="Add Channels" addChannelOption />
-      {/* Connect DB */}
-      {/* Sidebar Option */}
-      {channels.map((channel) => (
-        <SidebarOption title={channel.name} id={channel.id} />
-      ))}
+      <div className="sidebar__add-channel">
+        <button className="sidebar__add-channel--btn">
+          <strong>+</strong> &nbsp;&nbsp;Add Channel
+          {/* <SidebarOption Icon={Add} title="Add Channels" addChannelOption /> */}
+        </button>
+      </div>
+      <div className="sidebar__list">
+        {channels.map((channel) => (
+          <SidebarOption title={channel.name} id={channel.id} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -3,21 +3,32 @@
 @import 'variables.scss';
 
 .chatInput {
-  width: 100vw;
+  width: 99%;
+
   position: relative;
 
   &__container {
-    width: 100%;
+    width: 80%;
+    height: 7rem;
+
     position: fixed;
-    bottom: 3rem;
+    bottom: 0;
+    margin-left: 2rem;
+    padding-top: 1rem;
+    background-color: $color-blue-dark;
+    // background-color: yellow;
   }
 
   form {
+    position: relative;
+
     input {
-      width: 60%;
+      width: 95%;
       border: 1px solid $color-grey-medium;
       border-radius: 3px;
-      padding: 1.5rem;
+      padding: 1rem;
+      background-color: $color-blue-medium;
+      color: $color-white;
     }
 
     input:focus {
@@ -26,8 +37,22 @@
 
     button {
       width: 5%;
-      padding: 1.4rem;
-      margin-left: 0.5rem;
+      padding: 0.7rem;
+      padding-top: 1rem;
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      transform: translateX(-6rem);
+      color: $color-white;
+      cursor: pointer;
+
+      &:hover {
+        color: orange;
+      }
     }
   }
+}
+
+.sendBtn {
+  font-size: 2rem !important;
 }

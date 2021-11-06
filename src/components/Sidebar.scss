@@ -1,11 +1,14 @@
 /** @format */
 
 @import 'variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
 .sidebar {
   background-color: $color-blue-dark;
   color: $color-white;
-  border-top: $border-section;
+  margin-left: 3rem;
+
   flex: 0.3;
   max-width: 26rem;
   font-size: 18px;
@@ -17,16 +20,18 @@
   }
 
   &__header {
-    border-bottom: $border-section;
     padding: 1.3rem;
-    padding-bottom: 1rem;
+    min-width: 21rem;
 
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 
     h2 {
       font-size: 2rem;
       margin-bottom: 5px;
+      font-weight: 400;
     }
 
     h3 {
@@ -50,7 +55,51 @@
     }
   }
 
+  &__avatar {
+    height: 5rem !important;
+    width: 5rem !important;
+    object-fit: cover;
+  }
+
   &__info {
     flex: 1;
+    margin-left: 2.5rem;
+
+    h2 {
+      font-family: 'Fredoka One', cursive;
+    }
+  }
+
+  &__add-channel {
+    margin-top: 2rem;
+    margin-left: 2rem;
+
+    &--btn {
+      background-color: white;
+      border-radius: 5rem;
+      padding: 0.5rem 3rem 0.5rem 2rem;
+      border: none;
+      box-shadow: 2px 4px 5px grey;
+      font-size: 1.3rem;
+      color: $color-blue-dark;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:active {
+        transform: scale(0.9);
+        box-shadow: 2px 3px 4px grey;
+      }
+
+      strong {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &__list {
+    margin-top: 2rem;
+    // margin-left: 2rem;
   }
 }

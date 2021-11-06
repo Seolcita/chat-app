@@ -4,6 +4,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import db from '../firebase';
 
+//CSS & MUI icons
+import { BubbleChart } from '@mui/icons-material';
 import './SidebarOption.scss';
 
 function SidebarOption({ Icon, title, id, addChannelOption }) {
@@ -39,7 +41,8 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
         <h3>{title}</h3>
       ) : (
         <h3 className="sidebarOption__channel">
-          <span className="sidebarOption__hash">#</span> {title}
+          <BubbleChart />
+          <span className="sidebarOption__title">{title}</span>
         </h3>
       )}
     </div>

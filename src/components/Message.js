@@ -55,7 +55,7 @@ function Message({
       <div className="message__info">
         <div className="message__info--top">
           <h4>
-            {userName}
+            <span className="message__userName">{userName}</span>
             <span className="message__timestamp">
               {new Date(timestamp?.toDate()).toUTCString()}
             </span>
