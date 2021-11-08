@@ -6,7 +6,7 @@ import { useStateValue } from '../StateProvider';
 
 // CSS & MUI Icons & Components
 import { Avatar } from '@mui/material';
-import { FiberManualRecord } from '@mui/icons-material';
+import { FiberManualRecord, Add } from '@mui/icons-material';
 import './Sidebar.scss';
 import db from '../firebase';
 
@@ -43,8 +43,12 @@ function Sidebar() {
       </div>
       <div className="sidebar__add-channel">
         <button className="sidebar__add-channel--btn">
-          <strong>+</strong> &nbsp;&nbsp;Add Channel
-          {/* <SidebarOption Icon={Add} title="Add Channels" addChannelOption /> */}
+          <SidebarOption
+            Icon={Add}
+            title="Add Channels"
+            addChannelOption
+            className="sidebar__add-channel--btn"
+          />
         </button>
       </div>
       <div className="sidebar__list">
