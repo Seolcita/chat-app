@@ -39,11 +39,8 @@
     &--bottom {
       p {
         padding-right: 5rem;
-        // font-family: 'Dongle', sans-serif;
-        // font-weight: 300;
-        // font-size: 2.5rem;
-        // line-height: 2rem;
       }
+
       span {
         margin-left: 2rem;
         color: $color-grey-light;
@@ -70,9 +67,7 @@
 }
 
 .modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center;
 }
 
 .editChatInput {
@@ -82,9 +77,7 @@
   background-color: orange;
   border-radius: 1.5rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center;
 
   &__container {
     @include center;
@@ -119,7 +112,6 @@
 
       &:hover {
         background-color: crimson;
-        // color: $color-blue-dark;
       }
 
       &:active {
@@ -142,6 +134,8 @@
     color: orange;
   }
 }
+
+// RESPONSIVE
 
 @media (min-width: 450px) and (max-width: 800px) {
   .editChatInput {

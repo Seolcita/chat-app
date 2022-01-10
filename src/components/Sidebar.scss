@@ -77,21 +77,18 @@
     &--btn {
       background-color: white;
       border-radius: 5rem;
-      padding: 0.2rem 2rem 0.2rem 1rem;
+      padding: 0.5rem 2rem 0.5rem 1rem;
       border: none;
-      // box-shadow: 2px 4px 5px grey;
       color: $color-blue-dark;
       cursor: pointer;
       font-family: 'Fredoka One', cursive;
 
       &:hover {
-        // opacity: 0.9;
         background-color: rgb(198, 198, 196);
       }
 
       &:active {
-        transform: scale(0.9);
-        // box-shadow: 2px 3px 4px grey;
+        transform: scale(0.95);
       }
 
       strong {
