@@ -19,6 +19,7 @@ body {
 
   &__container {
     width: 40vw;
+    max-width: 58rem;
     padding: 10rem;
     text-align: center;
     background-color: $color-white;
@@ -40,6 +41,7 @@ body {
     justify-content: center;
     align-items: center;
     color: orange;
+    min-width: max-content;
 
     &--icon {
       object-fit: cover;
@@ -55,6 +57,7 @@ body {
   }
 
   &__btn {
+    min-width: 18.3rem;
     margin-top: 2rem;
     font-family: 'Dongle', sans-serif;
     background-color: $color-blue-dark;
@@ -71,6 +74,14 @@ body {
 
     &:active {
       transform: scale(0.9);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login {
+    &__container {
+      width: 80vw;
     }
   }
 }

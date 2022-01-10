@@ -9,33 +9,35 @@ import { auth, provider } from '../firebase';
 import { BubbleChart } from '@mui/icons-material';
 import './Login.scss';
 
-function Login() {
+function Login({ history }) {
   const [state, dispatch] = useStateValue();
 
   const signIn = () => {
     auth
       .signInWithPopup(provider)
-      .then((result) => {
+      .then(result => {
         console.log(result);
         dispatch({
           type: actionTypes.SET_USER,
           user: result.user,
         });
+        // Redirect to 'general' chat room
+        history.push('/room/OzSSWw1su49xrc2sweTi');
       })
-      .catch((error) => {
+      .catch(error => {
         alert(error.message);
         console.log(error.message);
       });
   };
 
   return (
-    <div className="login">
-      <div className="login__container">
-        <div className="login__logo">
-          <BubbleChart className="login__logo--icon" />
-          <span className="login__logo--title">Babble Babble</span>
+    <div className='login'>
+      <div className='login__container'>
+        <div className='login__logo'>
+          <BubbleChart className='login__logo--icon' />
+          <span className='login__logo--title'>Babble Babble</span>
         </div>
-        <button className="login__btn" onClick={signIn}>
+        <button className='login__btn' onClick={signIn}>
           Sign In with Google
         </button>
       </div>
