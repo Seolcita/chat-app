@@ -1,4 +1,12 @@
 /** @format */
 
-@mixin border {
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-column {
+  @include center;
+  flex-direction: column;
 }
